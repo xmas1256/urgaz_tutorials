@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+from django.conf import settings
 from os import name
 from django.contrib import admin
 from django.urls import path
@@ -54,4 +56,4 @@ urlpatterns = [
     #report
     path('reports/all/<str:st>/<int:year>/<int:month>/<int:day>/', reports_all, name='reports_all'),
     path('create/report', ReportCreateView.as_view(), name='create_report'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
