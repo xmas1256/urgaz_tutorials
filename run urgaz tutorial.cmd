@@ -1,0 +1,1 @@
+start /min python D:\x\urgaz_tutorials\manage.py runserver 192.168.1.13:8000
