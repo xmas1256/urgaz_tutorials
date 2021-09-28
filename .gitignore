@@ -3,4 +3,7 @@ urgaz_tutorials/__pycache__
 __pycache__
 app/__pycache__
 statistic/__pycache__
+statistic/migrations
+app/migrations
+staticfiles
 

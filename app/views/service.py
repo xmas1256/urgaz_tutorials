@@ -55,3 +55,14 @@ def service_install_printers(request):
 
 # def service_install_local_printer(request):
     
+
+
+
+
+def service_turnoff_auto_update(request, file):
+    
+    if file == "True":
+        f = open('files/service_turnoff_auto_update.cmd', 'rb')
+        return FileResponse(f)
+    else:
+        return render(request, 'views/services/turnoff_auto_update.html')

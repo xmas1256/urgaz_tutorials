@@ -17,6 +17,9 @@ Including another URLconf
 
 
 
+
+
+
 from django.conf import settings
 from django.conf.urls.static import static
 from os import name
@@ -24,6 +27,8 @@ from django.contrib import admin
 from django.urls import path
 from app.views.main import *
 from app.views.service import *
+from app.views.instructions import *
+
 ############################
 from statistic.views.main import *
 from statistic.views.create import *
@@ -38,10 +43,11 @@ urlpatterns = [
     path('service/net_use', service_net_use, name='service_net_use'),
     path('service/get/net_use/<str:file>/', service_get_net_use, name='service_get_net_use'),
     path('service/install_printers', service_install_printers, name='service_install_printers'),
-
-
-
-
+    path('service/service_turnoff_auto_update/<str:file>/', service_turnoff_auto_update, name='service_turnoff_auto_update'),
+    
+    # instructions
+    path('instructions', instructions, name='instructions'),
+    path('instructions/group_outlook', group_outlook, name='group_outlook'),
 
     ######## STATISTIC 
     path('statistic/<int:smena>/', statistic_menu, name='statistic'),
